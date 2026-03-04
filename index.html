@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NT2 Technisch Lezen</title>
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #f0f8ff;
+}
+h1 {
+    color: #2c6e91;
+}
+.woord {
+    display: inline-block;
+    margin: 20px;
+    font-size: 28px;
+}
+img {
+    width: 80px;
+    display: block;
+    margin: 10px auto;
+}
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+}
+#timer {
+    font-size: 24px;
+    color: red;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Korte klank i</h1>
+
+<div id="timer">60</div>
+
+<div id="woorden"></div>
+
+<button onclick="startTimer()">Start 1 minuut</button>
+<button onclick="shuffle()">Nieuwe rij</button>
+
+<script>
+let woorden = [
+{tekst:"vis", plaatje:"https://cdn.pixabay.com/photo/2013/07/13/10/07/fish-156423_1280.png"},
+{tekst:"kip", plaatje:"https://cdn.pixabay.com/photo/2013/07/13/10/07/chicken-156417_1280.png"},
+{tekst:"lip", plaatje:"https://cdn.pixabay.com/photo/2016/03/31/19/14/lips-1296096_1280.png"},
+{tekst:"pit", plaatje:"https://cdn.pixabay.com/photo/2016/03/31/19/58/peach-1297544_1280.png"},
+{tekst:"ik", plaatje:"https://cdn.pixabay.com/photo/2014/04/03/11/50/person-312655_1280.png"}
+];
+
+function shuffle() {
+    let shuffled = woorden.sort(() => 0.5 - Math.random());
+    let output = "";
+    shuffled.forEach(w => {
+        output += `<div class="woord">
+                    ${w.tekst}
+                    <img src="${w.plaatje}">
+                   </div>`;
+    });
+    document.getElementById("woorden").innerHTML = output;
+}
+
+function startTimer() {
+    let tijd = 60;
+    let interval = setInterval(function(){
+        tijd--;
+        document.getElementById("timer").innerHTML = tijd;
+        if(tijd <= 0){
+            clearInterval(interval);
+            alert("Tijd is om!");
+        }
+    },1000);
+}
+
+shuffle();
+</script>
+
+</body>
+</html>
