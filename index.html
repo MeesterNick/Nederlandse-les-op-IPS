@@ -160,7 +160,24 @@ function showI(){
     
     document.getElementById("main").innerHTML = output;
 }
+function showGroep(groep){
+    document.getElementById("main").innerHTML =
+    "<h1>Groep " + groep + "</h1>" +
+    "<p>Welkom bij groep " + groep + ".</p>" +
+    "<p>Hier komen straks de leesoefeningen.</p>";
+}
 
+function showSpelling(groep){
+    document.getElementById("main").innerHTML =
+    "<h1>Spelling - Groep " + groep + "</h1>" +
+    "<p>Hier komen straks spellingsoefeningen.</p>";
+}
+
+function showWoordenschat(groep){
+    document.getElementById("main").innerHTML =
+    "<h1>Woordenschat - Groep " + groep + "</h1>" +
+    "<p>Hier komen straks woordenschatoefeningen.</p>";
+}
 </script>
 
 </body>
