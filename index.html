@@ -69,6 +69,23 @@ body {
     display: block;
 }
 
+/* Sub-menu for nested dropdowns */
+.dropdown-content .dropdown {
+    position: relative;
+}
+
+.dropdown-content .dropdown-content {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 160px;
+    display: none;
+}
+
+.dropdown-content .dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /* INHOUD */
 .content {
     padding: 40px;
@@ -92,7 +109,22 @@ body {
   <div class="dropdown">
     <button class="dropbtn">Lezen ▼</button>
     <div class="dropdown-content">
-      <a href="#" onclick="showGroep(3)">Groep 3</a>
+      <div class="dropdown">
+        <a href="#" onclick="showGroep(3)">Groep 3</a>
+        <div class="dropdown-content">
+          <a href="#" onclick="showKern(3,1)">Kern 1</a>
+          <a href="#" onclick="showKern(3,2)">Kern 2</a>
+          <a href="#" onclick="showKern(3,3)">Kern 3</a>
+          <a href="#" onclick="showKern(3,4)">Kern 4</a>
+          <a href="#" onclick="showKern(3,5)">Kern 5</a>
+          <a href="#" onclick="showKern(3,6)">Kern 6</a>
+          <a href="#" onclick="showKern(3,7)">Kern 7</a>
+          <a href="#" onclick="showKern(3,8)">Kern 8</a>
+          <a href="#" onclick="showKern(3,9)">Kern 9</a>
+          <a href="#" onclick="showKern(3,10)">Kern 10</a>
+          <a href="#" onclick="showKern(3,11)">Kern 11</a>
+        </div>
+      </div>
       <a href="#" onclick="showGroep(4)">Groep 4</a>
       <a href="#" onclick="showGroep(5)">Groep 5</a>
       <a href="#" onclick="showGroep(6)">Groep 6</a>
@@ -173,6 +205,12 @@ function showWoordenschat(groep){
     document.getElementById("main").innerHTML =
     "<h1>Woordenschat - Groep " + groep + "</h1>" +
     "<p>Hier komen straks woordenschatoefeningen.</p>";
+}
+
+function showKern(groep, kern){
+    document.getElementById("main").innerHTML =
+    "<h1>Kern " + kern + " - Groep " + groep + "</h1>" +
+    "<p>Hier komen straks de oefeningen voor Kern " + kern + ".</p>";
 }
 </script>
 
