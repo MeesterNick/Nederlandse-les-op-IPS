@@ -1,1 +1,1 @@
-# Technisch-lezen-NT2
+# Nederlandse les op IPS
