@@ -1,90 +1,183 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-index ed0fd58d7f96be840baf962eb2afe95b37e06965..223eca1dc8194ad7679047d32295d0fd57d8a3f2 100644
---- a/index.html
-+++ b/index.html
-@@ -1,77 +1,80 @@
- <!DOCTYPE html>
- <html>
- <head>
- <title>Welkom bij de pagina van Meester Nick</title>
- 
- <style>
- 
- body{
- margin:0;
- font-family:Arial;
- text-align:center;
- background-color:#f4fbff;
- }
- 
- /* NAVBAR */
- 
- .navbar{
- background-color:#2c6e91;
--overflow:hidden;
-+overflow:visible;
- }
- 
- /* Links en knoppen in navbar */
- 
- .navbar a, .dropbtn{
- float:left;
- display:block;
- font-size:18px;
- color:white;
- padding:14px 16px;
- text-decoration:none;
- background-color:inherit;
- border:none;
- cursor:pointer;
- font-family:Arial;
- }
- 
- /* Hover effect */
- 
- .navbar a:hover, .dropdown:hover .dropbtn{
- background-color:#1f4f69;
- }
- 
- /* DROPDOWN */
- 
- .dropdown{
- float:left;
- overflow:hidden;
-+position:relative;
- }
- 
- .dropdown-content{
- display:none;
- position:absolute;
-+top:100%;
-+left:0;
- background-color:white;
- min-width:160px;
- box-shadow:0 8px 16px rgba(0,0,0,0.2);
- z-index:1;
- }
- 
- .dropdown-content a{
- color:black;
- padding:12px 16px;
- text-decoration:none;
- display:block;
- text-align:left;
- }
- 
- .dropdown-content a:hover{
- background-color:#ddd;
- }
- 
- .dropdown:hover .dropdown-content{
- display:block;
- }
- 
- /* CONTENT */
- 
- .content{
- 
-EOF
-)
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welkom bij de pagina van Meester Nick</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+background-color:#f4fbff;
+}
+
+/* NAVBAR */
+
+.navbar{
+background-color:#2c6e91;
+overflow:hidden;
+}
+
+/* Links en knoppen in navbar */
+
+.navbar a, .dropbtn{
+float:left;
+display:block;
+font-size:18px;
+color:white;
+padding:14px 16px;
+text-decoration:none;
+background-color:inherit;
+border:none;
+cursor:pointer;
+font-family:Arial;
+}
+
+/* Hover effect */
+
+.navbar a:hover, .dropdown:hover .dropbtn{
+background-color:#1f4f69;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+float:left;
+overflow:hidden;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+background-color:white;
+min-width:160px;
+box-shadow:0 8px 16px rgba(0,0,0,0.2);
+z-index:1;
+}
+
+.dropdown-content a{
+color:black;
+padding:12px 16px;
+text-decoration:none;
+display:block;
+text-align:left;
+}
+
+.dropdown-content a:hover{
+background-color:#ddd;
+}
+
+.dropdown:hover .dropdown-content{
+display:block;
+}
+
+/* CONTENT */
+
+.content{
+padding:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<a href="#" onclick="showHome()">Home</a>
+
+<div class="dropdown">
+<button class="dropbtn">Lezen ▼</button>
+<div class="dropdown-content">
+<a href="#" onclick="showGroep(3)">Groep 3</a>
+<a href="#" onclick="showGroep(4)">Groep 4</a>
+<a href="#" onclick="showGroep(5)">Groep 5</a>
+<a href="#" onclick="showGroep(6)">Groep 6</a>
+<a href="#" onclick="showGroep(7)">Groep 7</a>
+<a href="#" onclick="showGroep(8)">Groep 8</a>
+</div>
+</div>
+
+<div class="dropdown">
+<button class="dropbtn">Spelling ▼</button>
+<div class="dropdown-content">
+<a href="#" onclick="showSpelling(3)">Groep 3</a>
+<a href="#" onclick="showSpelling(4)">Groep 4</a>
+<a href="#" onclick="showSpelling(5)">Groep 5</a>
+<a href="#" onclick="showSpelling(6)">Groep 6</a>
+<a href="#" onclick="showSpelling(7)">Groep 7</a>
+<a href="#" onclick="showSpelling(8)">Groep 8</a>
+</div>
+</div>
+
+<div class="dropdown">
+<button class="dropbtn">Woordenschat ▼</button>
+<div class="dropdown-content">
+<a href="#" onclick="showWoordenschat(3)">Groep 3</a>
+<a href="#" onclick="showWoordenschat(4)">Groep 4</a>
+<a href="#" onclick="showWoordenschat(5)">Groep 5</a>
+<a href="#" onclick="showWoordenschat(6)">Groep 6</a>
+<a href="#" onclick="showWoordenschat(7)">Groep 7</a>
+<a href="#" onclick="showWoordenschat(8)">Groep 8</a>
+</div>
+</div>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="content" id="main">
+
+<h1>Welkom bij Nederlands op IPS</h1>
+
+<p>Hier kun je oefenen met Nederlands.</p>
+
+<p>Je kunt in de menubalk kiezen waarmee je wilt oefenen.</p>
+
+<p>Succes!</p>
+
+</div>
+
+<script>
+
+function showHome(){
+
+document.getElementById("main").innerHTML =
+"<h1>Welkom bij Nederlands op IPS</h1>" +
+"<p>Hier kun je oefenen met Nederlands.</p>" +
+"<p>Je kunt in de menubalk kiezen waarmee je wilt oefenen.</p>" +
+"<p>Succes!</p>";
+
+}
+
+function showGroep(groep){
+
+document.getElementById("main").innerHTML =
+"<h1>Lezen - Groep " + groep + "</h1>" +
+"<p>Hier komen straks de leesoefeningen voor groep " + groep + ".</p>";
+
+}
+
+function showSpelling(groep){
+
+document.getElementById("main").innerHTML =
+"<h1>Spelling - Groep " + groep + "</h1>" +
+"<p>Hier komen straks spellingsoefeningen.</p>";
+
+}
+
+function showWoordenschat(groep){
+
+document.getElementById("main").innerHTML =
+"<h1>Woordenschat - Groep " + groep + "</h1>" +
+"<p>Hier komen straks woordenschatoefeningen.</p>";
+
+}
+
+</script>
+
+</body>
+</html>
