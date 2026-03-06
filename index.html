@@ -20,7 +20,12 @@ overflow:hidden;
 }
 
 .navbar a, .dropbtn{
+background-color:inherit;
+color:white;
+font-family:Arial;
+}
 float:left;
+display:block;
 font-size:18px;
 color:white;
 padding:14px 16px;
@@ -28,6 +33,7 @@ text-decoration:none;
 background-color:inherit;
 border:none;
 cursor:pointer;
+ 
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn{
@@ -88,7 +94,7 @@ padding:40px;
 <a href="#" onclick="showHome()">Home</a>
 
 <div class="dropdown">
-<button class="dropbtn">Groepen ▼</button>
+<button class="dropbtn">Lezen ▼</button>
 <div class="dropdown-content">
 
 <a href="#" onclick="showGroep(3)">Groep 3</a>
